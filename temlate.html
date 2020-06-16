@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Let'sFindReps</title>
+	<link rel="stylesheet" href="style.css">	
+  </head>
+  <body>
+      <div class="outerContainer">
+          <div class="innerContainer">
+              <div class="headerContainer flex">
+                  <div class="headerContainer__appName">
+                      <h1 class="headerContainer__appName_logoName">Let'sFindReps</h1>
+                  </div>
+                  <div class="headerContainer__searchBlock"></div>
+              </div>
+          </div>
+      </div>
+
+      <div class="outerContainer">
+        <div class="innerContainer">
+              <div class="listRepContainer">
+                  <div class="listRepContainer__ListRep flex">
+                    <template>
+                        <div class="listRepContainer__ListRep_itemContiner flex flex-direction_column">
+                            <div class="repNameContainer">
+                                <img src="rep" alt="">
+                                <a href="" class="repName"></a>
+                            </div>
+                            <div class="repStarsContainer">
+                                <img src="star" alt="">
+                                <p class="repStars"></p>
+                            </div>                            
+                            <p class="lastCommit"></p>
+                            <a href="" class="repLink">go to repository</a>
+                        </div>
+                    </template>
+                  </div>
+                  <div class="listRepContainer__paginator">
+                      <ul class="listRepContainer__paginator_pages">
+                          <template>
+                              <li class="paginatorItem">
+                                  <a href="" class="paginatorItem_num text-decoration_none"></a>
+                              </li>
+                          </template>
+                      </ul>
+                  </div>
+              </div>
+        </div>
+      </div>
+
+      <div class="outerContainer">
+        <div class="innerContainer">
+              <div class="footer">
+                  empty footer
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
