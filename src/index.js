@@ -1,3 +1,4 @@
+import './styles.css';
 import listRepModule from './js/listRepLoader';
 listRepModule();
 import getMostPopRepsModule from './js/mostPopReps';
