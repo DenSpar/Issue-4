@@ -1,5 +1,5 @@
 import './styles.css';
-import listRepModule from './js/listRepLoader';
+import listRepModule from '@js/listRepLoader';
 //тестовый массив - удалить
 let repTestArr = [
     {name: 'jakesgordon/javascript-tetris', numStars: '354', lastCommit: '5 Feb', repLink: 'http://github.com'},
@@ -13,23 +13,10 @@ let repTestArr = [
     {name: '9fontDefault', numStars: '78', lastCommit: '5 Feb', repLink: 'http://github.com'},
     {name: '10numStars', numStars: '5.1', lastCommit: '5 Feb', repLink: 'http://github.com'},
 ];
-//тестовый массив - удалить
-let repTestArr2 = [
-    {name: 'test', numStars: '354', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '1111', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '9999', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '78', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '5.1', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '354', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '1111', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '9999', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '78', lastCommit: '5 Feb', repLink: 'http://github.com'},
-    {name: 'test', numStars: '5.1', lastCommit: '5 Feb', repLink: 'http://github.com'},
-];
 listRepModule(repTestArr);
-import getMostPopRepsModule from './js/mostPopReps';
+import getMostPopRepsModule from '@js/mostPopReps';
 getMostPopRepsModule();
-import paginatorModule from './js/paginatorLoader';
+import paginatorModule from '@js/paginatorLoader';
 paginatorModule();
-import searchModule from './js/searchInput';
+import searchModule from '@js/searchInput';
 searchModule();

@@ -43,5 +43,12 @@ module.exports = {
                 use: ['file-loader']
             }
         ]
+    },
+    resolve: {
+        extensions:['.js'],
+        alias: {
+            '@js': path.resolve(__dirname,'src/js'),
+            '@': path.resolve(__dirname,'src')
+        }
     }
 }
