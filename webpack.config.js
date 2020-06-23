@@ -1,0 +1,45 @@
+const path = require('path');
+const HTMLwebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    plugins: [
+        new HTMLwebpackPlugin({
+            template: './src/assets/template.html'
+        }),
+        new CopyWebpackPlugin({
+            patterns:[
+                {
+                    from: path.resolve(__dirname, 'src/assets/rep.jpg'),
+                    to: path.resolve(__dirname, 'dist')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/assets/star.jpg'),
+                    to: path.resolve(__dirname, 'dist')
+                }
+            ]
+        })
+    ],
+    devServer: {
+        port: 3000,
+        hot: true
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                use: ['file-loader']
+            }
+        ]
+    }
+}
