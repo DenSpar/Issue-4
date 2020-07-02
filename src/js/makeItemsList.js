@@ -22,12 +22,16 @@ let makeItemsListModule = function(url) {
             obj.listCommits = makePromiseArrModule(obj.listCommits);
         })
         .then(() => {
-            Promise.all(obj.listCommits).then(value => {
+            Promise.race([
+                Promise.all(obj.listCommits),
+                new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, коммиты не полученны'), 700))
+            ]).then(value => {
                 value.forEach(function(item, i, arr) {
                     obj.listItems[i].lastCommit = value[i][0].commit.committer.date
                 });
                 delete obj.listCommits
             }).then(() => resolve(obj))
+            .catch(err => console.log(err));
         })        
     })
     .catch(err => console.log(err));
