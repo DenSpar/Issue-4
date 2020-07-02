@@ -1,4 +1,5 @@
-import getRequestModule from '@js/getRequest';
+import listRepModule from '@js/listRepLoader';
+import makeRepsListModule from '@js/makeRepsList';
 let searchInput = document.querySelector('#searchInput');
 
 let searchModule = function() {    
@@ -8,11 +9,12 @@ let searchModule = function() {
             if (searchInput.value === '') {
                 searchInput.placeholder = 'репозиторий не указан :(';
             } else {  
-                let requestURL = 'https://api.github.com/search/repositories?q=' + searchInput.value + '&sort=stars&page=1&per_page=10';
-                console.log('запрос: ' + requestURL);
-                getRequestModule(requestURL)
-                .then(data => console.log(data))
-                .catch(err => console.log(err));
+                let requestURL = 'https://api.github.com/search/repositories?q=' + searchInput.value + '&sort=stars&page=1&per_page=5';
+                //заменить количество репов на 10
+                makeRepsListModule(requestURL, 2000)
+                .then(dataList => {
+                    listRepModule(dataList.listItems)
+                }).catch(err => console.log(err));
             };
         };
     });

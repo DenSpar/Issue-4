@@ -140,7 +140,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_listRepLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/listRepLoader */ \"./src/js/listRepLoader.js\");\n/* harmony import */ var _js_makeItemsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js/makeItemsList */ \"./src/js/makeItemsList.js\");\n/* harmony import */ var _js_paginatorLoader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js/paginatorLoader */ \"./src/js/paginatorLoader.js\");\n/* harmony import */ var _js_searchInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js/searchInput */ \"./src/js/searchInput.js\");\n\n\n\n\nlet mostPopRepsURL = 'https://api.github.com/search/repositories?q=stars%3A%3E0&sort=stars&order=desc&page=1&per_page=10';\n\n\nPromise.race([\n    Object(_js_makeItemsList__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(mostPopRepsURL),\n    new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, репозитории не полученны'), 2000))\n]).then(dataList => {\n    //console.log(dataList);\n    Object(_js_listRepLoader__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(dataList.listItems)\n}).catch(err => console.log(err));\n\n\n\nObject(_js_paginatorLoader__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\nObject(_js_searchInput__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_listRepLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/listRepLoader */ \"./src/js/listRepLoader.js\");\n/* harmony import */ var _js_makeRepsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js/makeRepsList */ \"./src/js/makeRepsList.js\");\n/* harmony import */ var _js_paginatorLoader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @js/paginatorLoader */ \"./src/js/paginatorLoader.js\");\n/* harmony import */ var _js_searchInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @js/searchInput */ \"./src/js/searchInput.js\");\n\n\n\n\nlet mostPopRepsURL = 'https://api.github.com/search/repositories?q=stars%3A%3E0&sort=stars&order=desc&page=1&per_page=1';\n\nObject(_js_makeRepsList__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(mostPopRepsURL, 2000)\n.then(dataList => {\n    Object(_js_listRepLoader__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(dataList.listItems)\n}).catch(err => console.log(err));\n\n\n\nObject(_js_paginatorLoader__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\nObject(_js_searchInput__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -192,6 +192,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/js/makeRepsList.js":
+/*!********************************!*\
+  !*** ./src/js/makeRepsList.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return makeRepsListModule; });\n/* harmony import */ var _js_makeItemsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js/makeItemsList */ \"./src/js/makeItemsList.js\");\n\r\nfunction makeRepsListModule(url, timeout) {\r\n    return Promise.race([\r\n        Object(_js_makeItemsList__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(url),\r\n        new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, репозитории не полученны'), timeout))\r\n    ])\r\n};\n\n//# sourceURL=webpack:///./src/js/makeRepsList.js?");
+
+/***/ }),
+
 /***/ "./src/js/paginatorLoader.js":
 /*!***********************************!*\
   !*** ./src/js/paginatorLoader.js ***!
@@ -212,7 +224,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n//тестовый масси
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_getRequest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js/getRequest */ \"./src/js/getRequest.js\");\n\nlet searchInput = document.querySelector('#searchInput');\n\nlet searchModule = function() {    \n    //создаем событие для ввода запроса\n    searchInput.addEventListener ('keydown', function (evt) {\n        if (evt.keyCode === 13) {\n            if (searchInput.value === '') {\n                searchInput.placeholder = 'репозиторий не указан :(';\n            } else {  \n                let requestURL = 'https://api.github.com/search/repositories?q=' + searchInput.value + '&sort=stars&page=1&per_page=10';\n                console.log('запрос: ' + requestURL);\n                Object(_js_getRequest__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(requestURL)\n                .then(data => console.log(data))\n                .catch(err => console.log(err));\n            };\n        };\n    });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (searchModule);\n\n\n//# sourceURL=webpack:///./src/js/searchInput.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_listRepLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @js/listRepLoader */ \"./src/js/listRepLoader.js\");\n/* harmony import */ var _js_makeRepsList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/makeRepsList */ \"./src/js/makeRepsList.js\");\n\n\nlet searchInput = document.querySelector('#searchInput');\n\nlet searchModule = function() {    \n    //создаем событие для ввода запроса\n    searchInput.addEventListener ('keydown', function (evt) {\n        if (evt.keyCode === 13) {\n            if (searchInput.value === '') {\n                searchInput.placeholder = 'репозиторий не указан :(';\n            } else {  \n                let requestURL = 'https://api.github.com/search/repositories?q=' + searchInput.value + '&sort=stars&page=1&per_page=5';\n                //заменить количество репов на 10\n                Object(_js_makeRepsList__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(requestURL, 2000)\n                .then(dataList => {\n                    Object(_js_listRepLoader__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(dataList.listItems)\n                }).catch(err => console.log(err));\n            };\n        };\n    });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (searchModule);\n\n\n//# sourceURL=webpack:///./src/js/searchInput.js?");
 
 /***/ }),
 
