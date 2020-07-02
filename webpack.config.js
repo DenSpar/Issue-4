@@ -7,7 +7,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
@@ -43,5 +43,12 @@ module.exports = {
                 use: ['file-loader']
             }
         ]
+    },
+    resolve: {
+        extensions:['.js'],
+        alias: {
+            '@js': path.resolve(__dirname,'src/js'),
+            '@': path.resolve(__dirname,'src')
+        }
     }
 }
