@@ -13,7 +13,9 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     let newStarsNum = newCard.querySelector('.repStarsNum');
     newStarsNum.textContent = numStars;
     let newLastCommit = newCard.querySelector('.lastCommit')
+    //console.log(lastCommit);
     newLastCommit.textContent += lastCommit;
+    //console.log(lastCommit);
     let newRepLink = newCard.querySelector('.repLink');
     newRepLink.href = repLink;
     listRep.append(newCard);
