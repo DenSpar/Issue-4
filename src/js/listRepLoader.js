@@ -1,4 +1,3 @@
-//тестовый массив - удалить
 let listRepContainer = document.querySelector('#listRepContainer');
 let itemTemplateContent = listRepContainer.querySelector('template').content;
 let itemTemplate = itemTemplateContent.querySelector('.listRepContainer__listRep_itemContainer');
@@ -13,9 +12,7 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     let newStarsNum = newCard.querySelector('.repStarsNum');
     newStarsNum.textContent = numStars;
     let newLastCommit = newCard.querySelector('.lastCommit')
-    //console.log(lastCommit);
     newLastCommit.textContent += lastCommit;
-    //console.log(lastCommit);
     let newRepLink = newCard.querySelector('.repLink');
     newRepLink.href = repLink;
     listRep.append(newCard);
@@ -23,12 +20,11 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
 
 let listRepModule = function(arr) {
     listRep.innerHTML = '';
-    //создать карточки в списке репозиториев - переделать на ответы от запросов API
+
     for (let i = 0; i < arr.length; i++) {
         makeNewRepCard(arr[i].name, arr[i].numStars, arr[i].lastCommit, arr[i].repLink);
     };
 
-    //загрузить список на страницу - так и останется
     listRepContainer.prepend(listRep);
 };
 

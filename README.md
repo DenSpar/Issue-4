@@ -63,3 +63,4 @@ init project
 
 02.07.20
 1. настроил чтобы отрисовывались карточки после ответа от promise.all. Теперь думаю перенести promise.all из index.js в модуль + переложить promise.all в Promise.race и добавить в Promise.race прерывающий setTimeout. По девтулсу запросы возвращаются чуть меньше чем 1 с
+2. перенес promise.all в модуль

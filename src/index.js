@@ -7,18 +7,9 @@ let mostPopRepsURL = 'https://api.github.com/search/repositories?q=stars%3A%3E0&
 
 
 makeItemsListModule(mostPopRepsURL)
-//перенести в makeItemsListModule?
 .then(dataList => {
-    
-    Promise.all(dataList.listCommits).then(value => {
-        value.forEach(function(item, i, arr) {
-            dataList.listItems[i].lastCommit = value[i][0].commit.committer.date
-        });
-        delete dataList.listCommits
-    })
-    //оставить здесь
-    .then(() => listRepModule(dataList.listItems))
-})
+    console.log(dataList);
+    listRepModule(dataList.listItems)})
 .catch(err => console.log(err));
 
 
