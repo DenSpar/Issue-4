@@ -3,10 +3,10 @@ import listRepModule from '@js/listRepLoader';
 import makeRepsListModule from '@js/makeRepsList';
 import searchModule from '@js/searchInput';
 
-
-
+searchModule();
 
 if (localStorage.getItem('searchName')) {
+    searchInput.placeholder = localStorage.getItem('searchName');
     let requestUrl = 'https://api.github.com/search/repositories?q=' + localStorage.getItem('searchName') + '&sort=stars&page=1&per_page=3'
 //заменить количество репов на 10 ^
     makeRepsListModule(requestUrl, 2000)
@@ -25,4 +25,3 @@ if (localStorage.getItem('searchName')) {
 import paginatorModule from '@js/paginatorLoader';
 paginatorModule();
 
-searchModule();
