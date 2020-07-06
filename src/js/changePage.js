@@ -9,12 +9,13 @@ export default function changePageModule () {
     let addEventListenerHandler = function (page) {
         //создаем обработчик события - клик на страницу
         page.addEventListener ('click', function () {
-            //инструкция к событию
-            nowActivePage.classList.remove('activePage');
-            console.log('active page was ', nowActivePage);
-            page.classList.add('activePage');
-            nowActivePage = page;
-            console.log('new active page is ',page);
+            // условие, срабатывает только если нажать на неактивную страницу
+            if (nowActivePage.childNodes[1].innerHTML !== page.childNodes[1].innerHTML) {
+                nowActivePage.classList.remove('activePage');
+                console.log('active page was №', nowActivePage.childNodes[1].innerHTML, 'new active page №', page.childNodes[1].innerHTML);
+                page.classList.add('activePage');
+                nowActivePage = page;
+            };            
         });
     };
 
