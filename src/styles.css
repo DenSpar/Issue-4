@@ -92,6 +92,7 @@
     width: 20px;
     height: 27px;
     padding: 5px;
+    cursor: pointer;
 }
 .paginatorPage:hover {
     color: red;

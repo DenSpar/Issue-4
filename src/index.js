@@ -23,4 +23,4 @@ if (localStorage.getItem('searchName')) {
     .then(dataList => {
         listRepModule(dataList.listItems);
     }).catch(err => console.log(err));
-}
+};

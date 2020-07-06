@@ -1,3 +1,4 @@
+import changePageModule from '@js/changePage';
 let paginatorContainer = listRepContainer.querySelector('.listRepContainer__paginator');
 let paginatorPageTemplateContent = paginatorContainer.querySelector('template').content;
 let paginatorPageTemplate = paginatorPageTemplateContent.querySelector('.paginatorPage');
@@ -10,9 +11,9 @@ if (oldPaginatorList) {
 let paginatorList = document.createElement('ul');
 paginatorList.classList.add('listRepContainer__paginator_list', 'flex', 'justify-content_center');
 
-let makePages = function (num) {
+let makePage = function (num) {
     let newPage = paginatorPageTemplate.cloneNode(true);
-    let newNum = newPage.querySelector('a');
+    let newNum = newPage.querySelector('div');
     newNum.textContent = num;
     if (num === 1) {
         newPage.classList.add('activePage');
@@ -23,19 +24,22 @@ let makePages = function (num) {
 let makePaginatorModule = function(num) {
     paginatorList.innerHTML = '';
     let howManyPages = 0;
-    //проверка если найденых репов больше 10, создаст блок пагинатора - заменить на функцию и импорт
+    //проверка если найденых репов больше 10, но меньше 100, создаст блок пагинатора до 10 страниц
     if (num > 10 && num <= 100) {
         howManyPages = Math.ceil(num/10);        
     };
+    //если найденых репов больше 100, создаст блок пагинатора на 10 страниц
     if (num > 100) {
         howManyPages = 10;
     };
 
     for (let j = 1; j <= howManyPages; j++) {
-        makePages(j);
+        makePage(j);
     };
     //загрузить блок пагинатора на страницу
-    listRepContainer.append(paginatorList);
+    paginatorContainer.append(paginatorList);
+    console.log('paginator already painted');
+    changePageModule();
 };
 
 export default makePaginatorModule;

@@ -13,6 +13,7 @@ let searchModule = function() {
                 let requestURL = 'https://api.github.com/search/repositories?q=' + searchInput.value + '&sort=stars&page=1&per_page=1';
                 //заменить количество репов на 10 ^
                 localStorage.setItem('searchName', searchInput.value.toString());
+                localStorage.setItem('page', '1');
                 makeRepsListModule(requestURL, 2000)
                 .then(dataList => {
                     listRepModule(dataList.listItems);
