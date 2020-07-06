@@ -15,7 +15,11 @@ let makePage = function (num) {
     let newPage = paginatorPageTemplate.cloneNode(true);
     let newNum = newPage.querySelector('div');
     newNum.textContent = num;
-    if (num === 1) {
+    let activePage = 1;
+    if (localStorage.getItem('page')) {
+        activePage = +localStorage.getItem('page');
+    }
+    if (num === activePage) {
         newPage.classList.add('activePage');
     };
     paginatorList.append(newPage);

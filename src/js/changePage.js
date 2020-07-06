@@ -15,6 +15,7 @@ export default function changePageModule () {
                 console.log('active page was №', nowActivePage.childNodes[1].innerHTML, 'new active page №', page.childNodes[1].innerHTML);
                 page.classList.add('activePage');
                 nowActivePage = page;
+                localStorage.setItem('page', page.childNodes[1].innerHTML.toString());
             };            
         });
     };
