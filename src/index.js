@@ -8,5 +8,5 @@ if (localStorage.getItem('searchName')) {
     searchInput.value = localStorage.getItem('searchName');
     searchModule(localStorage.getItem('searchName'), localStorage.getItem('page'));
 } else {
-    searchModule('stars%3A%3E0', localStorage.getItem('page'));
+    searchModule('stars%3A%3E0', 1, true);
 };

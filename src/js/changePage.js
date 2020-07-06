@@ -1,3 +1,4 @@
+import searchModule from '@js/searchInput';
 let paginatorContainer = listRepContainer.querySelector('.listRepContainer__paginator');
 export default function changePageModule () {
     //обявляем переменную. Внутри переменной будет объект с активной страницей
@@ -16,7 +17,8 @@ export default function changePageModule () {
                 page.classList.add('activePage');
                 nowActivePage = page;
                 localStorage.setItem('page', page.childNodes[1].innerHTML.toString());
-            };            
+                searchModule(localStorage.getItem('searchName'), page.childNodes[1].innerHTML.toString());
+            };
         });
     };
 
