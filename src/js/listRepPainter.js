@@ -18,7 +18,7 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     listRep.append(newCard);
 };
 
-let listRepModule = function(arr) {
+let listRepPainterModule = function(arr) {
     listRep.innerHTML = '';
 
     for (let i = 0; i < arr.length; i++) {
@@ -28,4 +28,4 @@ let listRepModule = function(arr) {
     listRepContainer.prepend(listRep);
 };
 
-export default listRepModule;
+export default listRepPainterModule;

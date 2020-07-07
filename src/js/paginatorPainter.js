@@ -1,4 +1,5 @@
 import changePageModule from '@js/changePage';
+
 let paginatorContainer = listRepContainer.querySelector('.listRepContainer__paginator');
 let paginatorPageTemplateContent = paginatorContainer.querySelector('template').content;
 let paginatorPageTemplate = paginatorPageTemplateContent.querySelector('.paginatorPage');
@@ -25,7 +26,7 @@ let makePage = function (num) {
     paginatorList.append(newPage);
 };
 
-let makePaginatorModule = function(num) {
+let paintPaginatorModule = function(num) {
     paginatorList.innerHTML = '';
     let howManyPages = 0;
     //проверка если найденых репов больше 10, но меньше 100, создаст блок пагинатора до 10 страниц
@@ -46,4 +47,4 @@ let makePaginatorModule = function(num) {
     changePageModule();
 };
 
-export default makePaginatorModule;
+export default paintPaginatorModule;

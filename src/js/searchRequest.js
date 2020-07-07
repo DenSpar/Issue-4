@@ -1,18 +1,18 @@
-import listRepModule from '@js/listRepLoader';
+import listRepPainterModule from '@js/listRepPainter';
 import makeRepsListModule from '@js/makeRepsList';
-import makePaginatorModule from '@js/paginatorLoader';
+import paintPaginatorModule from '@js/paginatorPainter';
 
-let searchModule = function(searchName, searchPage, isMostPop) { 
+let searchRequestModule = function(searchName, searchPage, isMostPop) { 
     let requestURL = 'https://api.github.com/search/repositories?q=' + searchName + '&sort=stars&order=desc&page=' + searchPage + '&per_page=2';   
     //заменить количество репов на 10 ^
     makeRepsListModule(requestURL, 2000)
     .then(dataList => {
-        listRepModule(dataList.listItems);
+        listRepPainterModule(dataList.listItems);
         console.log(dataList.totalCount);
         if (!isMostPop){
-            makePaginatorModule(dataList.totalCount);
+            paintPaginatorModule(dataList.totalCount);
         };        
     }).catch(err => console.log(err));
 };
 
-export default searchModule;
+export default searchRequestModule;
