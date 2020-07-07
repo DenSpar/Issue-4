@@ -1,16 +1,16 @@
 import changePageModule from '@js/changePage';
 
-let paginatorContainer = listRepContainer.querySelector('.listRepContainer__paginator');
+let paginatorContainer = contentContainer.querySelector('.contentContainer__paginator');
 let paginatorPageTemplateContent = paginatorContainer.querySelector('template').content;
 let paginatorPageTemplate = paginatorPageTemplateContent.querySelector('.paginatorPage');
 
-let oldPaginatorList = paginatorContainer.querySelector('listRepContainer__paginator_list');
+let oldPaginatorList = paginatorContainer.querySelector('contentContainer__paginator_list');
 if (oldPaginatorList) {
     oldPaginatorList.remove();
 }
 
 let paginatorList = document.createElement('ul');
-paginatorList.classList.add('listRepContainer__paginator_list', 'flex', 'justify-content_center');
+paginatorList.classList.add('contentContainer__paginator_list', 'flex', 'justify-content_center');
 
 let makePage = function (num) {
     let newPage = paginatorPageTemplate.cloneNode(true);

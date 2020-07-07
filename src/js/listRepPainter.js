@@ -1,9 +1,9 @@
-let listRepContainer = document.querySelector('#listRepContainer');
-let itemTemplateContent = listRepContainer.querySelector('#repItemTemplate').content;
-let itemTemplate = itemTemplateContent.querySelector('.listRepContainer__listRep_itemContainer');
+let contentContainer = document.querySelector('#contentContainer');
+let itemTemplateContent = contentContainer.querySelector('#repItemTemplate').content;
+let itemTemplate = itemTemplateContent.querySelector('.contentContainer__listRep_itemContainer');
 
 let listRep = document.createElement('div');
-listRep.classList.add('listRepContainer__listRep', 'flex', 'justify-content_space-between', 'flex-wrap');
+listRep.classList.add('contentContainer__listRep', 'flex', 'justify-content_space-between', 'flex-wrap');
 
 let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     let newCard = itemTemplate.cloneNode(true);
@@ -22,7 +22,7 @@ let listRepPainterModule = function(arr) {
     listRep.innerHTML = '';
 
     let newTitle = document.createElement('h2');
-    newTitle.classList.add('listRepContainer__listRep_listTitle', 'fontDefault');
+    newTitle.classList.add('contentContainer__listRep_listTitle', 'fontDefault');
     if (localStorage.getItem('searchName')) {
         newTitle.textContent = 'Репозитории найденные по запросу "' + localStorage.getItem('searchName') + '"';
     } else {
@@ -35,7 +35,7 @@ let listRepPainterModule = function(arr) {
         makeNewRepCard(arr[i].name, arr[i].numStars, arr[i].lastCommit, arr[i].repLink);
     };
 
-    listRepContainer.prepend(listRep);
+    contentContainer.prepend(listRep);
 };
 
 export default listRepPainterModule;

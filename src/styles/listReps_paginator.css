@@ -1,8 +1,8 @@
-.listRepContainer__paginator {
+.contentContainer__paginator {
     width: 100%;
 }
 
-.listRepContainer__paginator_list {
+.contentContainer__paginator_list {
     margin: 10px 0 20px;
     padding: 0;
 }
