@@ -97,14 +97,80 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../c
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles.css":
-/*!**************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
-  \**************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/common.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/common.css ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!normalize.css */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/normalize.css/normalize.css\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);\n// Module\nexports.push([module.i, \".outerContainer {\\n    width: 100%;\\n\\tbackground-size: cover;\\n}\\n\\n.innerContainer {\\n    margin: 0 auto;\\n\\tpadding: 0 50px;\\n}\\n\\n.headerContainer {\\n    margin: 0;\\n\\theight: 45px;\\n}\\n\\n.headerContainer__appName {\\n    color: white;\\n    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    \\n    margin: auto 0;\\n    margin-right: 50px;\\n    font-size: 22px;\\n}\\n\\n.headerContainer__searchBlock {\\n    width: 300px;\\n\\theight: 35px;\\n\\tpadding: 7px;\\n\\tborder-color: #3b50c7;\\n\\toutline: none;\\n\\tcolor: #9E9C9C;\\n    cursor: pointer;\\n    margin: auto 0;\\n}\\n\\n/*\\n.listRepContainer {}\\n.listRepContainer__listRep {}\\n*/\\n.listRepContainer__listRep_listTitle {\\n    width: 100%;\\n    font-size: 19px;\\n    text-align: center;\\n    margin: 15px auto 0;\\n}\\n\\n.listRepContainer__listRep_itemContainer {\\n    width: 19%;\\n    padding: 10px;\\n    margin: 20px auto;\\n}\\n\\n.repNameContainer {\\n    margin-bottom: 3px;\\n}\\n\\n.repImg {\\n    width: 16px;\\n    min-width: 16px;\\n    height: 16px;\\n    margin-top: 2px;\\n}\\n\\n.repName {\\n    font-size: 16px;\\n    margin: auto 0 auto 3px;\\n}\\n\\n.repStarsContainer {\\n    height: 21px;\\n    margin-top: auto;\\n}\\n\\n.repStarsNum {\\n    font-size: 12px;\\n    margin: 4px 3px;\\n}\\n\\n.lastCommit {\\n    font-size: 12px;\\n    margin: 5px 0;\\n}\\n\\n.repLink {\\n    font-size: 12px;\\n}\\n\\n.listRepContainer__paginator {\\n    width: 100%;\\n}\\n\\n.listRepContainer__paginator_list {\\n    margin: 10px 0 20px;\\n    padding: 0;\\n}\\n\\n.paginatorPage {\\n    list-style: none;\\n    width: 20px;\\n    height: 27px;\\n    padding: 5px;\\n    cursor: pointer;\\n}\\n.paginatorPage:hover {\\n    color: red;\\n    border: 1px solid red;\\n    border-radius: 5px;\\n}\\n\\n.activePage {\\n    color: red;\\n    border: 1px solid red;\\n    border-radius: 5px;\\n}\\n\\n.paginatorPage_num {\\n    font-size: 13px;\\n    margin: auto;\\n}\\n\\n.footer {\\n    color: white;\\n    padding-top: 15px;\\n    margin: 0 auto;\\n}\\n\\n.fontDefault {\\n    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;\\n}\\n\\n.text-decoration_none {\\n    text-decoration: none;\\n}\\n\\n.backgroundColor {\\n    background-color: #4a82ff;\\n}\\n\\n.flex {\\n\\tdisplay: flex;\\n}\\n.flex-direction_column {\\n\\tflex-direction: column;\\n}\\n.justify-content_space-between {\\n    justify-content: space-between;\\n}\\n.justify-content_center {\\n\\tjustify-content: center;\\n}\\n.align-items_center {\\n\\talign-items: center;\\n}\\n.flex-wrap {\\n\\tflex-wrap: wrap;\\n}\\n/*\\n.justify-content_space-around {\\n\\tjustify-content: space-around;\\n}\\n.justify-content_start {\\n\\tjustify-content: flex-start;\\n}\\n.align-items_start {\\n\\talign-items: flex-start;\\n}\\n.align-items_end {\\n\\talign-items: flex-end;\\n}\\n.flex-grow_1 {\\n\\tflex-grow: 1;\\n}\\n*/\\n\\n.border_1px {\\n\\tborder: 1px solid;\\n}\\n\\n.border-radius_4px {\\n\\tborder-radius: 4px;\\n}\\n\\n.border-radius_12px {\\n\\tborder-radius: 12px;\\n}\\n\\n.box-sizing {\\n\\tbox-sizing: border-box;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".outerContainer {\\r\\n    width: 100%;\\r\\n\\tbackground-size: cover;\\r\\n}\\r\\n\\r\\n.innerContainer {\\r\\n    margin: 0 auto;\\r\\n\\tpadding: 0 50px;\\r\\n}\\r\\n\\r\\n.fontDefault {\\r\\n    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;\\r\\n}\\r\\n\\r\\n.text-decoration_none {\\r\\n    text-decoration: none;\\r\\n}\\r\\n\\r\\n.backgroundColor {\\r\\n    background-color: #4a82ff;\\r\\n}\\r\\n\\r\\n.border_1px {\\r\\n\\tborder: 1px solid;\\r\\n}\\r\\n\\r\\n.border-radius_4px {\\r\\n\\tborder-radius: 4px;\\r\\n}\\r\\n\\r\\n.border-radius_12px {\\r\\n\\tborder-radius: 12px;\\r\\n}\\r\\n\\r\\n.box-sizing {\\r\\n\\tbox-sizing: border-box;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/common.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/flex.css":
+/*!*******************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/flex.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".flex {\\r\\n\\tdisplay: flex;\\r\\n}\\r\\n\\r\\n.flex-direction_column {\\r\\n\\tflex-direction: column;\\r\\n}\\r\\n\\r\\n.justify-content_space-between {\\r\\n    justify-content: space-between;\\r\\n}\\r\\n\\r\\n.justify-content_center {\\r\\n\\tjustify-content: center;\\r\\n}\\r\\n\\r\\n.align-items_center {\\r\\n\\talign-items: center;\\r\\n}\\r\\n\\r\\n.flex-wrap {\\r\\n\\tflex-wrap: wrap;\\r\\n}\\r\\n\\r\\n/*\\r\\n.justify-content_space-around {\\r\\n\\tjustify-content: space-around;\\r\\n}\\r\\n.justify-content_start {\\r\\n\\tjustify-content: flex-start;\\r\\n}\\r\\n.align-items_start {\\r\\n\\talign-items: flex-start;\\r\\n}\\r\\n.align-items_end {\\r\\n\\talign-items: flex-end;\\r\\n}\\r\\n.flex-grow_1 {\\r\\n\\tflex-grow: 1;\\r\\n}\\r\\n*/\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/flex.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/footer.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/footer.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".footer {\\r\\n    color: white;\\r\\n    padding-top: 15px;\\r\\n    margin: 0 auto;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/footer.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/header.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/header.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".headerContainer {\\r\\n    margin: 0;\\r\\n\\theight: 45px;\\r\\n}\\r\\n\\r\\n.headerContainer__appName {\\r\\n    color: white;\\r\\n    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    \\r\\n    margin: auto 0;\\r\\n    margin-right: 50px;\\r\\n    font-size: 22px;\\r\\n}\\r\\n\\r\\n.headerContainer__searchBlock {\\r\\n    width: 300px;\\r\\n\\theight: 35px;\\r\\n\\tpadding: 7px;\\r\\n\\tborder-color: #3b50c7;\\r\\n\\toutline: none;\\r\\n\\tcolor: #9E9C9C;\\r\\n    cursor: pointer;\\r\\n    margin: auto 0;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/header.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/listReps_items.css":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/listReps_items.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"/*\\r\\n.listRepContainer {}\\r\\n.listRepContainer__listRep {}\\r\\n*/\\r\\n.listRepContainer__listRep_listTitle {\\r\\n    width: 100%;\\r\\n    font-size: 19px;\\r\\n    text-align: center;\\r\\n    margin: 15px auto 0;\\r\\n}\\r\\n\\r\\n.listRepContainer__listRep_itemContainer {\\r\\n    width: 19%;\\r\\n    padding: 10px;\\r\\n    margin: 20px auto;\\r\\n}\\r\\n\\r\\n.repNameContainer {\\r\\n    margin-bottom: 3px;\\r\\n}\\r\\n\\r\\n.repNameForList {\\r\\n    font-size: 16px;\\r\\n    margin: auto 0 auto 3px;\\r\\n}\\r\\n\\r\\n.repStarsContainer {\\r\\n    height: 21px;\\r\\n    margin-top: auto;\\r\\n}\\r\\n\\r\\n.repLink {\\r\\n    font-size: 12px;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/listReps_items.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/listReps_paginator.css":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/listReps_paginator.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".listRepContainer__paginator {\\r\\n    width: 100%;\\r\\n}\\r\\n\\r\\n.listRepContainer__paginator_list {\\r\\n    margin: 10px 0 20px;\\r\\n    padding: 0;\\r\\n}\\r\\n\\r\\n.paginatorPage {\\r\\n    list-style: none;\\r\\n    width: 20px;\\r\\n    height: 27px;\\r\\n    padding: 5px;\\r\\n    cursor: pointer;\\r\\n}\\r\\n.paginatorPage:hover {\\r\\n    color: red;\\r\\n    border: 1px solid red;\\r\\n    border-radius: 5px;\\r\\n}\\r\\n\\r\\n.activePage {\\r\\n    color: red;\\r\\n    border: 1px solid red;\\r\\n    border-radius: 5px;\\r\\n}\\r\\n\\r\\n.paginatorPage_num {\\r\\n    font-size: 13px;\\r\\n    margin: auto;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/listReps_paginator.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/styles.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/styles.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!normalize.css */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/normalize.css/normalize.css\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_1___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./common.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/common.css\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_2___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./header.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/header.css\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_3___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./listReps_items.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/listReps_items.css\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_4___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./listReps_paginator.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/listReps_paginator.css\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_5___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./flex.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/flex.css\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_6___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./footer.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/footer.css\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_1___);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_2___);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_3___);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_4___);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_5___);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_6___);\n// Module\nexports.push([module.i, \"/* общие стили для списка репов и для страницы репа*/\\n.repImg {\\n    width: 16px;\\n    min-width: 16px;\\n    height: 16px;\\n    margin-top: 2px;\\n}\\n\\n.repStarsNum {\\n    font-size: 12px;\\n    margin: 4px 3px;\\n}\\n\\n.lastCommit {\\n    font-size: 12px;\\n    margin: 5px 0;\\n}\\n\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/styles.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -140,7 +206,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_searchRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/searchRequest */ \"./src/js/searchRequest.js\");\n/* harmony import */ var _js_inputListener__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js/inputListener */ \"./src/js/inputListener.js\");\n\n\n\n\nObject(_js_inputListener__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\nif (localStorage.getItem('searchName')) {\n    searchInput.value = localStorage.getItem('searchName');\n    Object(_js_searchRequest__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(localStorage.getItem('searchName'), localStorage.getItem('page'));\n} else {\n    Object(_js_searchRequest__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('stars%3A%3E0', 1, true);\n};\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.css */ \"./src/styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_searchRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @js/searchRequest */ \"./src/js/searchRequest.js\");\n/* harmony import */ var _js_inputListener__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @js/inputListener */ \"./src/js/inputListener.js\");\n\n\n\n\nObject(_js_inputListener__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\nif (localStorage.getItem('searchName')) {\n    searchInput.value = localStorage.getItem('searchName');\n    Object(_js_searchRequest__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(localStorage.getItem('searchName'), localStorage.getItem('page'));\n} else {\n    Object(_js_searchRequest__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('stars%3A%3E0', 1, true);\n};\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -200,7 +266,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nlet listRepContainer = document.querySelector('#listRepContainer');\nlet itemTemplateContent = listRepContainer.querySelector('#repItemTemplate').content;\nlet itemTemplate = itemTemplateContent.querySelector('.listRepContainer__listRep_itemContainer');\n\nlet listRep = document.createElement('div');\nlistRep.classList.add('listRepContainer__listRep', 'flex', 'justify-content_space-between', 'flex-wrap');\n\nlet makeNewRepCard = function (name, numStars, lastCommit, repLink) {\n    let newCard = itemTemplate.cloneNode(true);\n    let newName = newCard.querySelector('.repName');\n    newName.textContent = name;\n    let newStarsNum = newCard.querySelector('.repStarsNum');\n    newStarsNum.textContent = numStars;\n    let newLastCommit = newCard.querySelector('.lastCommit')\n    newLastCommit.textContent += lastCommit;\n    let newRepLink = newCard.querySelector('.repLink');\n    newRepLink.href = repLink;\n    listRep.append(newCard);\n};\n\nlet listRepPainterModule = function(arr) {\n    listRep.innerHTML = '';\n\n    let newTitle = document.createElement('h2');\n    newTitle.classList.add('listRepContainer__listRep_listTitle', 'fontDefault');\n    if (localStorage.getItem('searchName')) {\n        newTitle.textContent = 'Репозитории найденные по запросу \"' + localStorage.getItem('searchName') + '\"';\n    } else {\n        newTitle.textContent = '10 самых популярных репозиториев';\n    }\n    \n    listRep.append(newTitle);\n\n    for (let i = 0; i < arr.length; i++) {\n        makeNewRepCard(arr[i].name, arr[i].numStars, arr[i].lastCommit, arr[i].repLink);\n    };\n\n    listRepContainer.prepend(listRep);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (listRepPainterModule);\n\n//# sourceURL=webpack:///./src/js/listRepPainter.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nlet listRepContainer = document.querySelector('#listRepContainer');\nlet itemTemplateContent = listRepContainer.querySelector('#repItemTemplate').content;\nlet itemTemplate = itemTemplateContent.querySelector('.listRepContainer__listRep_itemContainer');\n\nlet listRep = document.createElement('div');\nlistRep.classList.add('listRepContainer__listRep', 'flex', 'justify-content_space-between', 'flex-wrap');\n\nlet makeNewRepCard = function (name, numStars, lastCommit, repLink) {\n    let newCard = itemTemplate.cloneNode(true);\n    let newName = newCard.querySelector('.repNameForList');\n    newName.textContent = name;\n    let newStarsNum = newCard.querySelector('.repStarsNum');\n    newStarsNum.textContent = numStars;\n    let newLastCommit = newCard.querySelector('.lastCommit')\n    newLastCommit.textContent += lastCommit;\n    let newRepLink = newCard.querySelector('.repLink');\n    newRepLink.href = repLink;\n    listRep.append(newCard);\n};\n\nlet listRepPainterModule = function(arr) {\n    listRep.innerHTML = '';\n\n    let newTitle = document.createElement('h2');\n    newTitle.classList.add('listRepContainer__listRep_listTitle', 'fontDefault');\n    if (localStorage.getItem('searchName')) {\n        newTitle.textContent = 'Репозитории найденные по запросу \"' + localStorage.getItem('searchName') + '\"';\n    } else {\n        newTitle.textContent = '10 самых популярных репозиториев';\n    }\n    \n    listRep.append(newTitle);\n\n    for (let i = 0; i < arr.length; i++) {\n        makeNewRepCard(arr[i].name, arr[i].numStars, arr[i].lastCommit, arr[i].repLink);\n    };\n\n    listRepContainer.prepend(listRep);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (listRepPainterModule);\n\n//# sourceURL=webpack:///./src/js/listRepPainter.js?");
 
 /***/ }),
 
@@ -252,14 +318,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
 
 /***/ }),
 
-/***/ "./src/styles.css":
-/*!************************!*\
-  !*** ./src/styles.css ***!
-  \************************/
+/***/ "./src/styles/styles.css":
+/*!*******************************!*\
+  !*** ./src/styles/styles.css ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/styles.css?");
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/styles.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/styles/styles.css?");
 
 /***/ })
 

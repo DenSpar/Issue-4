@@ -1,4 +1,4 @@
-import './styles.css';
+import './styles/styles.css';
 import searchRequestModule from '@js/searchRequest';
 import inputListenerModule from '@js/inputListener';
 

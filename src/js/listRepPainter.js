@@ -7,7 +7,7 @@ listRep.classList.add('listRepContainer__listRep', 'flex', 'justify-content_spac
 
 let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     let newCard = itemTemplate.cloneNode(true);
-    let newName = newCard.querySelector('.repName');
+    let newName = newCard.querySelector('.repNameForList');
     newName.textContent = name;
     let newStarsNum = newCard.querySelector('.repStarsNum');
     newStarsNum.textContent = numStars;

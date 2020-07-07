@@ -1,0 +1,23 @@
+.headerContainer {
+    margin: 0;
+	height: 45px;
+}
+
+.headerContainer__appName {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+    margin: auto 0;
+    margin-right: 50px;
+    font-size: 22px;
+}
+
+.headerContainer__searchBlock {
+    width: 300px;
+	height: 35px;
+	padding: 7px;
+	border-color: #3b50c7;
+	outline: none;
+	color: #9E9C9C;
+    cursor: pointer;
+    margin: auto 0;
+}
