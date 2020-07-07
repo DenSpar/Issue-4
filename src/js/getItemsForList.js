@@ -1,7 +1,7 @@
 import getRequestModule from '@js/getRequest';
 import makePromiseArrModule from '@js/makePromiseArr';
 
-let makeItemsListModule = function(url) {
+let getItemsForListModule = function(url) {
     return new Promise((resolve, reject) => {
         let obj = {
                 listItems: [],
@@ -37,4 +37,4 @@ let makeItemsListModule = function(url) {
     .catch(err => console.log(err));
 };
 
-export default makeItemsListModule;
+export default getItemsForListModule;

@@ -18,8 +18,18 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     listRep.append(newCard);
 };
 
-let listRepModule = function(arr) {
+let listRepPainterModule = function(arr) {
     listRep.innerHTML = '';
+
+    let newTitle = document.createElement('h2');
+    newTitle.classList.add('listRepContainer__listRep_listTitle', 'fontDefault');
+    if (localStorage.getItem('searchName')) {
+        newTitle.textContent = 'Репозитории найденные по запросу "' + localStorage.getItem('searchName') + '"';
+    } else {
+        newTitle.textContent = '10 самых популярных репозиториев';
+    }
+    
+    listRep.append(newTitle);
 
     for (let i = 0; i < arr.length; i++) {
         makeNewRepCard(arr[i].name, arr[i].numStars, arr[i].lastCommit, arr[i].repLink);
@@ -28,4 +38,4 @@ let listRepModule = function(arr) {
     listRepContainer.prepend(listRep);
 };
 
-export default listRepModule;
+export default listRepPainterModule;

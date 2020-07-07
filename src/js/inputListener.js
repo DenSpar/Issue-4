@@ -1,4 +1,4 @@
-import searchModule from '@js/searchInput';
+import searchRequestModule from '@js/searchRequest';
 let searchInput = document.querySelector('#searchInput');
 
 let inputListenerModule = function() {
@@ -9,7 +9,7 @@ let inputListenerModule = function() {
             } else {
                 localStorage.setItem('searchName', searchInput.value.toString());
                 localStorage.setItem('page', '1');
-                searchModule(searchInput.value, 1)
+                searchRequestModule(searchInput.value, 1)
             };
         };
     });

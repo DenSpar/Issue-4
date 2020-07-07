@@ -36,6 +36,12 @@
 .listRepContainer {}
 .listRepContainer__listRep {}
 */
+.listRepContainer__listRep_listTitle {
+    width: 100%;
+    font-size: 19px;
+    text-align: center;
+    margin: 15px auto 0;
+}
 
 .listRepContainer__listRep_itemContainer {
     width: 19%;
