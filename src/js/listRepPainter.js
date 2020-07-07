@@ -1,5 +1,5 @@
 let listRepContainer = document.querySelector('#listRepContainer');
-let itemTemplateContent = listRepContainer.querySelector('template').content;
+let itemTemplateContent = listRepContainer.querySelector('#repItemTemplate').content;
 let itemTemplate = itemTemplateContent.querySelector('.listRepContainer__listRep_itemContainer');
 
 let listRep = document.createElement('div');

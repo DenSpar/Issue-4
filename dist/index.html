@@ -18,7 +18,7 @@
       <div class="outerContainer">
         <div class="innerContainer">
               <div class="listRepContainer" id="listRepContainer">
-                    <template>
+                    <template id="repItemTemplate">
                         <div class="listRepContainer__listRep_itemContainer flex flex-direction_column border_1px border-radius_12px box-sizing">
                             <div class="repNameContainer flex">
                                 <img src="rep.jpg" alt="" class="repImg">
@@ -26,10 +26,33 @@
                             </div>
                             <div class="repStarsContainer flex">
                                 <img src="star.jpg" alt="" class="repImg">
-                                <p class="repStarsNum fontDefault"></p>
+                                <span class="repStarsNum fontDefault"></span>
                             </div>                            
-                            <p class="lastCommit fontDefault">last commit - </p>
+                            <span class="lastCommit fontDefault">last commit - </span>
                             <a href="" class="repLink fontDefault">go to repository</a>
+                        </div>
+                    </template>
+
+                    <template id="repPageTemplate">
+                        <div class="repContainer__repPageContainer">
+                            <div class="repContainer__repPageContainer_repFirstInfo InfoBlock">
+                                <div class="repContainer__repPageContainer_repFirstInfo_repNameContainer">
+                                    <img src="rep.jpg" alt="" class="repImgForPage">
+                                    <span class="repNameForPage"></span>
+                                </div>
+                                <div class="repContainer__repPageContainer_repFirstInfo_stars">
+                                    <img src="star.jpg" alt="" class="repImg">
+                                    <span class="repStarsNum fontDefault"></span>
+                                </div>
+                                <span class="repContainer__repPageContainer_repFirstInfo_lastCommit fontDefault">last commit - </span>
+                            </div>
+                            <div class="repContainer__repPageContainer_repOwner InfoBlock">
+                                <img src="" alt="" class="repContainer__repPageContainer_repOwner_face">
+                                <span class="repContainer__repPageContainer_repOwner_ownerName"></span>
+                            </div>
+                            <div class="repContainer__repPageContainer_repLanguages InfoBlock"></div>
+                            <div class="repContainer__repPageContainer_repDescription InfoBlock"></div>
+                            <div class="repContainer__repPageContainer_repContributors InfoBlock"></div>
                         </div>
                     </template>
 
@@ -51,5 +74,5 @@
               </div>
           </div>
       </div>
-  <script src="main.01a7152f6695903ba7f7.js"></script></body>
+  <script src="main.90ed073b869f1daaf459.js"></script></body>
 </html>
