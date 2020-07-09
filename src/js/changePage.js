@@ -1,6 +1,6 @@
 import searchRequestModule from '@js/searchRequest';
 
-let paginatorContainer = listRepContainer.querySelector('.listRepContainer__paginator');
+let paginatorContainer = contentContainer.querySelector('.contentContainer__paginator');
 export default function changePageModule () {
     //обявляем переменную. Внутри переменной будет объект с активной страницей
     let nowActivePage = paginatorContainer.querySelector('.activePage');
