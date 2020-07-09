@@ -5,15 +5,16 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: path.resolve(__dirname, 'src/index.js'),
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new HTMLwebpackPlugin({
-            template: './src/assets/template.html'
-        }),
+            template: './src/assets/template.html',
+            filename: 'index.html'
+        }),        
         new CopyWebpackPlugin({
             patterns:[
                 {

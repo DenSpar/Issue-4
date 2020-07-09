@@ -10,3 +10,6 @@ if (localStorage.getItem('searchName')) {
 } else {
     searchRequestModule('stars%3A%3E0', 1, true);
 };
+
+//let urlTest = 
+console.log(window.location);

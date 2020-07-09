@@ -1,3 +1,5 @@
+import pageListenerModule from '@js/pageListener';
+//delete
 let contentContainer = document.querySelector('#contentContainer');
 let itemTemplateContent = contentContainer.querySelector('#repItemTemplate').content;
 let itemTemplate = itemTemplateContent.querySelector('.contentContainer__listRep_itemContainer');
@@ -9,6 +11,10 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     let newCard = itemTemplate.cloneNode(true);
     let newName = newCard.querySelector('.repNameForList');
     newName.textContent = name;
+    //delete
+    // может реализовать через href & target:_blank?
+    pageListenerModule(newName);
+    //delete
     let newStarsNum = newCard.querySelector('.repStarsNum');
     newStarsNum.textContent = numStars;
     let newLastCommit = newCard.querySelector('.lastCommit')
