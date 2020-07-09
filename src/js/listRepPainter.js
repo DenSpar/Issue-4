@@ -25,12 +25,11 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
 };
 
 let listRepPainterModule = function(arr) {
-    listRep.innerHTML = '';
-
     let newTitle = document.createElement('h2');
     newTitle.classList.add('contentContainer__listRep_listTitle', 'fontDefault');
-    if (localStorage.getItem('searchName')) {
-        newTitle.textContent = 'Репозитории найденные по запросу "' + localStorage.getItem('searchName') + '"';
+    let nowURL = new URL (window.location.href);
+    if (nowURL.searchParams.has('search')) {
+        newTitle.textContent = 'Репозитории найденные по запросу "' + nowURL.searchParams.get('search') + '"';
     } else {
         newTitle.textContent = '10 самых популярных репозиториев';
     }

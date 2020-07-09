@@ -2,11 +2,12 @@
 export default function pageListenerModule(item) {
     item.onclick = function(evt) {
         evt.preventDefault();
-        let urlTest = new URL(window.location.href);
-        urlTest.searchParams.set('search', 'testSearch');
-        urlTest.searchParams.set('page', 'testPage');
-        console.log(urlTest);
-        let otherWindow = window.open(urlTest);
+        let repURL = new URL(window.location.href);
+        repURL.searchParams.delete('search');
+        repURL.searchParams.delete('page');
+        repURL.searchParams.set('repName', item.textContent);
+        console.log(repURL);
+        let otherWindow = window.open(repURL);
         otherWindow.opener = null;
         console.log('here clicked some repName')
     }

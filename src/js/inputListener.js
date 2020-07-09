@@ -1,5 +1,9 @@
-import searchRequestModule from '@js/searchRequest';
+//import searchRequestModule from '@js/searchRequest';
 let searchInput = document.querySelector('#searchInput');
+
+let createUrlForList = function (search, page) {
+    
+};
 
 let inputListenerModule = function() {
     searchInput.addEventListener ('keydown', function (evt) {
@@ -7,9 +11,10 @@ let inputListenerModule = function() {
             if (searchInput.value === '') {
                 searchInput.placeholder = 'репозиторий не указан :(';
             } else {
-                localStorage.setItem('searchName', searchInput.value.toString());
-                localStorage.setItem('page', '1');
-                searchRequestModule(searchInput.value, 1)
+                let newURL = new URL (window.location.href);
+                newURL.searchParams.set('search', searchInput.value);
+                newURL.searchParams.set('page', 1);                
+                window.location.href = newURL;
             };
         };
     });
