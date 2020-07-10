@@ -1,7 +1,5 @@
-/*
-.contentContainer {}
-.contentContainer__listRep {}
-*/
+/*.contentContainer__listRep {}*/
+
 .contentContainer__listRep_listTitle {
     width: 100%;
     font-size: 19px;
@@ -19,6 +17,13 @@
     margin-bottom: 3px;
 }
 
+.repImgForList {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
 .repNameForList {
     font-size: 16px;
     margin: auto 0 auto 3px;
@@ -27,6 +32,16 @@
 .repStarsContainer {
     height: 21px;
     margin-top: auto;
+}
+
+.repStarsNumForList {
+    font-size: 12px;
+    margin: 4px 3px;
+}
+
+.lastCommitForList {
+    font-size: 12px;
+    margin: 5px 0;
 }
 
 .repLink {

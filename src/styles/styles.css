@@ -5,22 +5,10 @@
 @import "listReps_paginator.css";
 @import "flex.css";
 @import "footer.css";
+@import "pageRep.css";
 
 /* общие стили для списка репов и для страницы репа*/
-.repImg {
-    width: 16px;
-    min-width: 16px;
-    height: 16px;
-    margin-top: 2px;
-}
 
-.repStarsNum {
-    font-size: 12px;
-    margin: 4px 3px;
-}
 
-.lastCommit {
-    font-size: 12px;
-    margin: 5px 0;
-}
+
 

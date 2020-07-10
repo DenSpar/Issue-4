@@ -22,38 +22,45 @@
                 <template id="repItemTemplate">
                     <div class="contentContainer__listRep_itemContainer flex flex-direction_column border_1px border-radius_12px box-sizing">
                         <div class="repNameContainer flex">
-                            <img src="rep.jpg" alt="" class="repImg">
+                            <img src="rep.jpg" alt="" class="repImgForList">
                             <a href="" class="repNameForList fontDefault text-decoration_none" target="_blank"></a>
                         </div>
                         <div class="repStarsContainer flex">
-                            <img src="star.jpg" alt="" class="repImg">
-                            <span class="repStarsNum fontDefault"></span>
+                            <img src="star.jpg" alt="" class="repImgForList">
+                            <span class="repStarsNumForList fontDefault"></span>
                         </div>
-                        <span class="lastCommit fontDefault">last commit - </span>
+                        <span class="lastCommitForList fontDefault">last commit: </span>
                         <a href="" class="repLink fontDefault">go to repository</a>
                     </div>
                 </template>
 
                 <template id="repPageTemplate">
-                    <div class="repContainer__repPageContainer">
-                        <div class="repContainer__repPageContainer_repFirstInfo InfoBlock">
+                    <div class="repContainer__repPageContainer flex flex-direction_column align-items_start">
+                        <div class="repContainer__repPageContainer_repFirstInfo InfoBlock flex border_1px border-radius_12px">
                             <div class="repContainer__repPageContainer_repFirstInfo_repNameContainer">
                                 <img src="rep.jpg" alt="" class="repImgForPage">
-                                <span class="repNameForPage"></span>
+                                <span class="repNameForPage fontDefault"></span>                                
                             </div>
-                            <div class="repContainer__repPageContainer_repFirstInfo_stars">
-                                <img src="star.jpg" alt="" class="repImg">
-                                <span class="repStarsNum fontDefault"></span>
+                            <span class="fontDefault whiteSpace"> - </span>
+                            <div class="repContainer__repPageContainer_repFirstInfo_starsContainer">
+                                <img src="star.jpg" alt="" class="repImgForPage">
+                                <span class="repStarsNumForPage fontDefault"></span>
                             </div>
-                            <span class="repContainer__repPageContainer_repFirstInfo_lastCommit lastCommit fontDefault">last commit - </span>
+                            <span class="fontDefault whiteSpace"> - </span>
+                            <span class="lastCommitForPage fontDefault">last commit: </span>
                         </div>
-                        <div class="repContainer__repPageContainer_repOwner InfoBlock">
+                        <div class="repContainer__repPageContainer_repOwner InfoBlock flex flex-direction_column align-items_center border_1px border-radius_12px">
+                            <span class="fontDefault">Owner:</span>
                             <img src="" alt="" class="repContainer__repPageContainer_repOwner_face">
-                            <span class="repContainer__repPageContainer_repOwner_ownerName"></span>
+                            <span class="repContainer__repPageContainer_repOwner_ownerName fontDefault"></span>
                         </div>
-                        <div class="repContainer__repPageContainer_repLanguages InfoBlock"></div>
-                        <div class="repContainer__repPageContainer_repDescription InfoBlock"></div>
-                        <div class="repContainer__repPageContainer_repContributors InfoBlock"></div>
+                        <div class="repContainer__repPageContainer_repLanguages InfoBlock flex flex-wrap align-items_center border_1px border-radius_12px">
+                            <span class="fontDefault">Languages:</span>
+                        </div>
+                        <div class="repContainer__repPageContainer_repDescription InfoBlock border_1px border-radius_12px fontDefault">Description:</div>
+                        <div class="repContainer__repPageContainer_repContributors InfoBlock flex flex-wrap align-items_center border_1px border-radius_12px">
+                            <span class="fontDefault">Most active contributors:</span>
+                        </div>
                     </div>
                 </template>
                     
