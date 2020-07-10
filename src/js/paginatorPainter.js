@@ -4,11 +4,6 @@ let paginatorContainer = contentContainer.querySelector('.contentContainer__pagi
 let paginatorPageTemplateContent = paginatorContainer.querySelector('template').content;
 let paginatorPageTemplate = paginatorPageTemplateContent.querySelector('.paginatorPage');
 
-let oldPaginatorList = paginatorContainer.querySelector('contentContainer__paginator_list');
-if (oldPaginatorList) {
-    oldPaginatorList.remove();
-}
-
 let paginatorList = document.createElement('ul');
 paginatorList.classList.add('contentContainer__paginator_list', 'flex', 'justify-content_center');
 
@@ -17,8 +12,9 @@ let makePage = function (num) {
     let newNum = newPage.querySelector('div');
     newNum.textContent = num;
     let activePage = 1;
-    if (localStorage.getItem('page')) {
-        activePage = +localStorage.getItem('page');
+    let nowURL = new URL (window.location.href);
+    if (nowURL.searchParams.has('page')) {
+        activePage = +nowURL.searchParams.get('page');
     }
     if (num === activePage) {
         newPage.classList.add('activePage');

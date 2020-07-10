@@ -1,5 +1,3 @@
-import searchRequestModule from '@js/searchRequest';
-
 let paginatorContainer = contentContainer.querySelector('.contentContainer__paginator');
 export default function changePageModule () {
     //обявляем переменную. Внутри переменной будет объект с активной страницей
@@ -17,8 +15,9 @@ export default function changePageModule () {
                 console.log('active page was №', nowActivePage.childNodes[1].innerHTML, 'new active page №', page.childNodes[1].innerHTML);
                 page.classList.add('activePage');
                 nowActivePage = page;
-                localStorage.setItem('page', page.childNodes[1].innerHTML.toString());
-                searchRequestModule(localStorage.getItem('searchName'), page.childNodes[1].innerHTML.toString());
+                let newURL = new URL (window.location.href);
+                newURL.searchParams.set('page', page.childNodes[1].innerHTML);
+                window.location.href = newURL;
             };
         });
     };

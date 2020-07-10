@@ -1,5 +1,3 @@
-import pageListenerModule from '@js/pageListener';
-//delete
 let contentContainer = document.querySelector('#contentContainer');
 let itemTemplateContent = contentContainer.querySelector('#repItemTemplate').content;
 let itemTemplate = itemTemplateContent.querySelector('.contentContainer__listRep_itemContainer');
@@ -7,17 +5,22 @@ let itemTemplate = itemTemplateContent.querySelector('.contentContainer__listRep
 let listRep = document.createElement('div');
 listRep.classList.add('contentContainer__listRep', 'flex', 'justify-content_space-between', 'flex-wrap');
 
+let repPageURL = function (itemName) {
+    let repURL = new URL(window.location.href);
+    repURL.searchParams.delete('search');
+    repURL.searchParams.delete('page');
+    repURL.searchParams.set('repName', itemName);
+    return repURL
+};
+
 let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
     let newCard = itemTemplate.cloneNode(true);
     let newName = newCard.querySelector('.repNameForList');
     newName.textContent = name;
-    //delete
-    // может реализовать через href & target:_blank?
-    pageListenerModule(newName);
-    //delete
-    let newStarsNum = newCard.querySelector('.repStarsNum');
+    newName.href = repPageURL(name);    
+    let newStarsNum = newCard.querySelector('.repStarsNumForList');
     newStarsNum.textContent = numStars;
-    let newLastCommit = newCard.querySelector('.lastCommit')
+    let newLastCommit = newCard.querySelector('.lastCommitForList')
     newLastCommit.textContent += lastCommit;
     let newRepLink = newCard.querySelector('.repLink');
     newRepLink.href = repLink;
@@ -25,12 +28,11 @@ let makeNewRepCard = function (name, numStars, lastCommit, repLink) {
 };
 
 let listRepPainterModule = function(arr) {
-    listRep.innerHTML = '';
-
     let newTitle = document.createElement('h2');
     newTitle.classList.add('contentContainer__listRep_listTitle', 'fontDefault');
-    if (localStorage.getItem('searchName')) {
-        newTitle.textContent = 'Репозитории найденные по запросу "' + localStorage.getItem('searchName') + '"';
+    let nowURL = new URL (window.location.href);
+    if (nowURL.searchParams.has('search')) {
+        newTitle.textContent = 'Репозитории найденные по запросу "' + nowURL.searchParams.get('search') + '"';
     } else {
         newTitle.textContent = '10 самых популярных репозиториев';
     }

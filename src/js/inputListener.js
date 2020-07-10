@@ -1,4 +1,3 @@
-import searchRequestModule from '@js/searchRequest';
 let searchInput = document.querySelector('#searchInput');
 
 let inputListenerModule = function() {
@@ -7,13 +6,16 @@ let inputListenerModule = function() {
             if (searchInput.value === '') {
                 searchInput.placeholder = 'репозиторий не указан :(';
             } else {
-                localStorage.setItem('searchName', searchInput.value.toString());
-                localStorage.setItem('page', '1');
-                searchRequestModule(searchInput.value, 1)
+                let newURL = new URL (window.location.href);
+                if (newURL.searchParams.has('repName')) {
+                    newURL.searchParams.delete('repName');
+                };
+                newURL.searchParams.set('search', searchInput.value);
+                newURL.searchParams.set('page', 1);                
+                window.location.href = newURL;
             };
         };
     });
 };
-
 
 export default inputListenerModule;
