@@ -12,6 +12,23 @@ let makeContributorsArr = function (arr) {
     return newArr
 };
 
+let makeSecondRequestArr = function(targetObj, timeout) {
+    return [
+        Promise.race([
+            getRequestModule(targetObj.lastCommit),
+            new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, дата последнего коммита не получена'), timeout))
+        ]),
+        Promise.race([
+            getRequestModule(targetObj.languages),
+            new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, языки не получены'), timeout))
+        ]),
+        Promise.race([
+            getRequestModule(targetObj.contributors),
+            new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, контрибуторы не получены'), timeout))
+        ])
+    ];
+};
+
 let allSettledResponseHandler = function (dataItem, ifResolve, ifReject) {
     if (dataItem.status === "fulfilled") {
         return ifResolve
@@ -35,21 +52,11 @@ let getRepForPageModule = function () {
             obj.contributors = repsData.contributors_url + '?per_page=10'
         })
         .then(() => {
-            Promise.race([
-                Promise.allSettled([
-                    getRequestModule(obj.lastCommit),
-                    getRequestModule(obj.languages),
-                    getRequestModule(obj.contributors)
-                ]),
-                new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, данные не полученны'), 3000))
-            ])
+            Promise.allSettled(makeSecondRequestArr(obj, 500))
             .then(secondRequestData => {
-                obj.lastCommit = allSettledResponseHandler (secondRequestData[0], (secondRequestData[0].value[0].commit.committer.date), '-');
-                //obj.lastCommit = secondRequestData[0][0].commit.committer.date;
+                obj.lastCommit = allSettledResponseHandler (secondRequestData[0], secondRequestData[0].value[0].commit.committer.date, '-');
                 obj.languages = allSettledResponseHandler (secondRequestData[1], Object.keys(secondRequestData[1].value), '-');
-                //obj.languages = Object.keys(secondRequestData[1]);
                 obj.contributors = allSettledResponseHandler (secondRequestData[2], makeContributorsArr(secondRequestData[2].value), '-');
-                //obj.contributors = makeContributorsArr(secondRequestData[2]);
             })
             .then(() => resolve(obj))
         })
