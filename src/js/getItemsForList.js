@@ -23,11 +23,15 @@ let getItemsForListModule = function(url) {
         })
         .then(() => {
             Promise.race([
-                Promise.all(obj.listCommits),
+                Promise.allSettled(obj.listCommits),
                 new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, коммиты не полученны'), 700))
-            ]).then(value => {
-                value.forEach(function(item, i, arr) {
-                    obj.listItems[i].lastCommit = value[i][0].commit.committer.date
+            ]).then(commitData => {
+                commitData.forEach(function(item, i, arr) {
+                    if (commitData[i].status === "fulfilled") {
+                        obj.listItems[i].lastCommit = commitData[i].value[0].commit.committer.date;
+                    } else {
+                        obj.listItems[i].lastCommit = '-';
+                    };
                 });
                 delete obj.listCommits
             }).then(() => resolve(obj))

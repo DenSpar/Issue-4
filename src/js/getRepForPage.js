@@ -5,12 +5,19 @@ let requestURL = 'https://api.github.com/repos/' + nowURL.searchParams.get('repN
 //let urlForTest = 'https://api.github.com/repos/' + 'DenSpar/Lex-Shop';
 
 let makeContributorsArr = function (arr) {
-    //если котрибуторов нет и придет пустой массив?
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
         newArr.push(arr[i].login);
     };
     return newArr
+};
+
+let allSettledResponseHandler = function (dataItem, ifResolve, ifReject) {
+    if (dataItem.status === "fulfilled") {
+        return ifResolve
+    } else {
+        return ifReject
+    };
 };
 
 let getRepForPageModule = function () {
@@ -29,17 +36,20 @@ let getRepForPageModule = function () {
         })
         .then(() => {
             Promise.race([
-                Promise.all([
+                Promise.allSettled([
                     getRequestModule(obj.lastCommit),
                     getRequestModule(obj.languages),
                     getRequestModule(obj.contributors)
                 ]),
                 new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, данные не полученны'), 3000))
             ])
-            .then(value => {
-                obj.lastCommit = value[0][0].commit.committer.date;
-                obj.languages = Object.keys(value[1]);
-                obj.contributors = makeContributorsArr(value[2]);
+            .then(secondRequestData => {
+                obj.lastCommit = allSettledResponseHandler (secondRequestData[0], (secondRequestData[0].value[0].commit.committer.date), '-');
+                //obj.lastCommit = secondRequestData[0][0].commit.committer.date;
+                obj.languages = allSettledResponseHandler (secondRequestData[1], Object.keys(secondRequestData[1].value), '-');
+                //obj.languages = Object.keys(secondRequestData[1]);
+                obj.contributors = allSettledResponseHandler (secondRequestData[2], makeContributorsArr(secondRequestData[2].value), '-');
+                //obj.contributors = makeContributorsArr(secondRequestData[2]);
             })
             .then(() => resolve(obj))
         })
