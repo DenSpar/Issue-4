@@ -5,8 +5,11 @@ let repPageTemplate = repPageTemplateContent.querySelector('.repContainer__repPa
 let makeSpanItems = function (arr, where, itemClass) {
     for (let i = 0; i < arr.length; i++) {
         let item = document.createElement('span');
-        item.classList.add('fontDefault', 'badge', itemClass);
-        item.textContent = arr[i]
+        item.textContent = arr[i];
+        item.classList.add('fontDefault', 'badge');
+        if (item.textContent !== '-' && item.textContent !== ' отсутствуют') {
+            item.classList.add(itemClass);
+        }
         where.append(item);
     };
 };
@@ -24,10 +27,14 @@ let repPagePainterModule = function (repObj) {
     let newOwnerName = newCard.querySelector('.repContainer__repPageContainer_repOwner_ownerName');
     newOwnerName.textContent = repObj.ownerName;
     let languagesContainer = newCard.querySelector('.repContainer__repPageContainer_repLanguages');
-    makeSpanItems(repObj.languages, languagesContainer, 'language');
+    if (repObj.languages.length === 0) {
+        makeSpanItems([' отсутствуют'], languagesContainer, 'language');
+    } else {
+        makeSpanItems(repObj.languages, languagesContainer, 'language');
+    };
     let newDescription = newCard.querySelector('.repContainer__repPageContainer_repDescription');
     if (repObj.description) {
-        newDescription.textContent += repObj.description;
+        newDescription.textContent += ' ' + repObj.description;
     } else {
         newDescription.textContent += ' отсутствует';
     };
