@@ -1,7 +1,7 @@
 import './styles/styles.css';
 import searchRequestModule from '@js/searchRequest';
 import inputListenerModule from '@js/inputListener';
-import showPageModule from '@js/showPageModule';
+import showPageModule from '@js/showPage';
 
 inputListenerModule();
 

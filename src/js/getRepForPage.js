@@ -1,16 +1,41 @@
 import getRequestModule from '@js/getRequest';
+import writeTitleModule from '@js/contentTitle';
 
 let nowURL = new URL (window.location.href);
 let requestURL = 'https://api.github.com/repos/' + nowURL.searchParams.get('repName');
 //let urlForTest = 'https://api.github.com/repos/' + 'DenSpar/Lex-Shop';
 
 let makeContributorsArr = function (arr) {
-    //если котрибуторов нет и придет пустой массив?
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
         newArr.push(arr[i].login);
     };
     return newArr
+};
+
+let makeSecondRequestArr = function(targetObj, timeout) {
+    return [
+        Promise.race([
+            getRequestModule(targetObj.lastCommit),
+            new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, дата последнего коммита не получена'), timeout))
+        ]),
+        Promise.race([
+            getRequestModule(targetObj.languages),
+            new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, языки не получены'), timeout))
+        ]),
+        Promise.race([
+            getRequestModule(targetObj.contributors),
+            new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, контрибуторы не получены'), timeout))
+        ])
+    ];
+};
+
+let allSettledResponseHandler = function (dataItem, ifResolve, ifReject) {
+    if (dataItem.status === "fulfilled") {
+        return ifResolve
+    } else {
+        return ifReject
+    };
 };
 
 let getRepForPageModule = function () {
@@ -26,20 +51,15 @@ let getRepForPageModule = function () {
             obj.languages = repsData.languages_url;
             obj.description = repsData.description;
             obj.contributors = repsData.contributors_url + '?per_page=10'
+        }, () => {
+            writeTitleModule('что-то пошло не так :(<br>Попробуйте перезагрузить страницу');
         })
         .then(() => {
-            Promise.race([
-                Promise.all([
-                    getRequestModule(obj.lastCommit),
-                    getRequestModule(obj.languages),
-                    getRequestModule(obj.contributors)
-                ]),
-                new Promise((_, reject) => setTimeout(() => reject('время ожидания вышло, данные не полученны'), 3000))
-            ])
-            .then(value => {
-                obj.lastCommit = value[0][0].commit.committer.date;
-                obj.languages = Object.keys(value[1]);
-                obj.contributors = makeContributorsArr(value[2]);
+            Promise.allSettled(makeSecondRequestArr(obj, 500))
+            .then(secondRequestData => {
+                obj.lastCommit = allSettledResponseHandler (secondRequestData[0], secondRequestData[0].value[0].commit.committer.date, '-');
+                obj.languages = allSettledResponseHandler (secondRequestData[1], Object.keys(secondRequestData[1].value), '-');
+                obj.contributors = allSettledResponseHandler (secondRequestData[2], makeContributorsArr(secondRequestData[2].value), '-');
             })
             .then(() => resolve(obj))
         })
