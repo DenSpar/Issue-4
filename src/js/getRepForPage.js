@@ -1,4 +1,5 @@
 import getRequestModule from '@js/getRequest';
+import writeTitleModule from '@js/contentTitle';
 
 let nowURL = new URL (window.location.href);
 let requestURL = 'https://api.github.com/repos/' + nowURL.searchParams.get('repName');
@@ -50,6 +51,8 @@ let getRepForPageModule = function () {
             obj.languages = repsData.languages_url;
             obj.description = repsData.description;
             obj.contributors = repsData.contributors_url + '?per_page=10'
+        }, () => {
+            writeTitleModule('что-то пошло не так :(<br>Попробуйте перезагрузить страницу');
         })
         .then(() => {
             Promise.allSettled(makeSecondRequestArr(obj, 500))
