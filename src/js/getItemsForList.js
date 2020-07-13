@@ -19,12 +19,11 @@ let getItemsForListModule = function(url) {
                 obj.listCommits.push('https://api.github.com/repos/' + data.items[i].full_name + '/commits?per_page=1');
             };
             obj.totalCount = data.total_count;
-            obj.listCommits = makePromiseArrModule(obj.listCommits, 500);
+            obj.listCommits = makePromiseArrModule(obj.listCommits, 700);
         })
         .then(() => {
             Promise.allSettled(obj.listCommits)
             .then(commitData => {
-                console.log('second request: ', commitData)
                 commitData.forEach(function(item, i, arr) {
                     if (commitData[i].status === "fulfilled") {
                         obj.listItems[i].lastCommit = commitData[i].value[0].commit.committer.date;

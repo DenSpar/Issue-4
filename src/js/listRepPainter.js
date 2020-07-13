@@ -3,7 +3,7 @@ let itemTemplateContent = contentContainer.querySelector('#repItemTemplate').con
 let itemTemplate = itemTemplateContent.querySelector('.contentContainer__listRep_itemContainer');
 
 let listRep = document.createElement('div');
-listRep.classList.add('contentContainer__listRep', 'flex', 'justify-content_space-between', 'flex-wrap');
+listRep.classList.add('contentContainer__listRep', 'flex', 'flex-direction_column');
 
 let repPageURL = function (itemName) {
     let repURL = new URL(window.location.href);

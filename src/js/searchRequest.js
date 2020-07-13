@@ -8,7 +8,6 @@ let searchRequestModule = function(searchName, searchPage, isMostPop) {
     //заменить количество репов на 10 ^
     makeRepsListModule(requestURL, 2000)
     .then(dataList => {
-        console.log('total count: ', dataList.totalCount);
         if (dataList.totalCount === 0) {
             writeTitleModule('Репозитории по запросу "' + searchName + '" не найдены')
         } else {

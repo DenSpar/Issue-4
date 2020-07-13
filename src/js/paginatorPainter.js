@@ -39,7 +39,6 @@ let paintPaginatorModule = function(num) {
     };
     //загрузить блок пагинатора на страницу
     paginatorContainer.append(paginatorList);
-    console.log('paginator already painted');
     changePageModule();
 };
 

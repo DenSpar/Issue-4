@@ -8,7 +8,7 @@
   <body>
     <div class="outerContainer backgroundColor">
         <div class="innerContainer">
-            <div class="headerContainer flex">
+            <div class="headerContainer flex justify-content_space-around">
                 <h1 class="headerContainer__appName font-family_Cambria">Let'sFindReps</h1>
                 <input type="text" placeholder="Введите название репозитория" class="headerContainer__searchBlock box-sizing border_1px border-radius_4px" id="searchInput">
             </div>
@@ -21,8 +21,8 @@
                 <h2 class="contentContainer__title fontDefault display-none" id="contentTitle"></h2>
 
                 <template id="repItemTemplate">
-                    <div class="contentContainer__listRep_itemContainer flex flex-direction_column border_1px border-radius_12px box-sizing">
-                        <div class="repNameContainer flex">
+                    <div class="contentContainer__listRep_itemContainer flex flex-wrap border_1px border-radius_12px box-sizing">
+                        <div class="repNameContainer flex align-items_center">
                             <img src="rep.jpg" alt="" class="repImgForList">
                             <a href="" class="repNameForList fontDefault text-decoration_none" target="_blank"></a>
                         </div>
