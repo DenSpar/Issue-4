@@ -14,6 +14,10 @@
 	justify-content: center;
 }
 
+.justify-content_space-around {
+	justify-content: space-around;
+}
+
 .align-items_center {
 	align-items: center;
 }
@@ -27,9 +31,6 @@
 }
 
 /*
-.justify-content_space-around {
-	justify-content: space-around;
-}
 .justify-content_start {
 	justify-content: flex-start;
 }

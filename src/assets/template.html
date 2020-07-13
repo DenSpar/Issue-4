@@ -8,7 +8,7 @@
   <body>
     <div class="outerContainer backgroundColor">
         <div class="innerContainer">
-            <div class="headerContainer flex">
+            <div class="headerContainer flex justify-content_space-around">
                 <h1 class="headerContainer__appName font-family_Cambria">Let'sFindReps</h1>
                 <input type="text" placeholder="Введите название репозитория" class="headerContainer__searchBlock box-sizing border_1px border-radius_4px" id="searchInput">
             </div>
@@ -21,8 +21,8 @@
                 <h2 class="contentContainer__title fontDefault display-none" id="contentTitle"></h2>
 
                 <template id="repItemTemplate">
-                    <div class="contentContainer__listRep_itemContainer flex flex-direction_column border_1px border-radius_12px box-sizing">
-                        <div class="repNameContainer flex">
+                    <div class="contentContainer__listRep_itemContainer flex flex-wrap border_1px border-radius_12px box-sizing">
+                        <div class="repNameContainer flex align-items_center">
                             <img src="rep.jpg" alt="" class="repImgForList">
                             <a href="" class="repNameForList fontDefault text-decoration_none" target="_blank"></a>
                         </div>
@@ -37,13 +37,13 @@
 
                 <template id="repPageTemplate">
                     <div class="repContainer__repPageContainer flex flex-direction_column align-items_start">
-                        <div class="repContainer__repPageContainer_repFirstInfo InfoBlock flex border_1px border-radius_12px">
-                            <div class="repContainer__repPageContainer_repFirstInfo_repNameContainer">
+                        <div class="repContainer__repPageContainer_repFirstInfo InfoBlock flex justify-content_center">
+                            <div class="repContainer__repPageContainer_repFirstInfo_repNameContainer flex justify-content_center">
                                 <img src="rep.jpg" alt="" class="repImgForPage">
                                 <span class="repNameForPage fontDefault"></span>                                
                             </div>
                             <span class="fontDefault whiteSpace"> - </span>
-                            <div class="repContainer__repPageContainer_repFirstInfo_starsContainer">
+                            <div class="repContainer__repPageContainer_repFirstInfo_starsContainer flex justify-content_center">
                                 <img src="star.jpg" alt="" class="repImgForPage">
                                 <span class="repStarsNumForPage fontDefault"></span>
                             </div>
@@ -55,11 +55,11 @@
                             <img src="" alt="" class="repContainer__repPageContainer_repOwner_face">
                             <span class="repContainer__repPageContainer_repOwner_ownerName fontDefault"></span>
                         </div>
-                        <div class="repContainer__repPageContainer_repLanguages InfoBlock flex flex-wrap align-items_center border_1px border-radius_12px">
+                        <div class="repContainer__repPageContainer_repLanguages InfoBlock flex flex-wrap align-items_center">
                             <span class="fontDefault">Languages:</span>
                         </div>
-                        <div class="repContainer__repPageContainer_repDescription InfoBlock border_1px border-radius_12px fontDefault">Description:</div>
-                        <div class="repContainer__repPageContainer_repContributors InfoBlock flex flex-wrap align-items_center border_1px border-radius_12px">
+                        <div class="repContainer__repPageContainer_repDescription InfoBlock fontDefault">Description:</div>
+                        <div class="repContainer__repPageContainer_repContributors InfoBlock flex flex-wrap align-items_center">
                             <span class="fontDefault">Most active contributors:</span>
                         </div>
                     </div>

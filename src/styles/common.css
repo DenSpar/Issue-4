@@ -8,7 +8,10 @@
 	padding: 0 50px;
 }
 
-/*.contentContainer {}*/
+.contentContainer {
+	max-width: 800px;
+    margin: 0 auto;
+}
 
 .contentContainer__title {
 	width: 100%;
@@ -34,7 +37,7 @@
 }
 
 .border_1px {
-	border: 1px solid;
+	border: 1px solid rgb(246, 243, 243);;
 }
 
 .border-radius_4px {

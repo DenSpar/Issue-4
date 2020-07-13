@@ -30,12 +30,28 @@ let makeSecondRequestArr = function(targetObj, timeout) {
     ];
 };
 
-let allSettledResponseHandler = function (dataItem, ifResolve, ifReject) {
-    if (dataItem.status === "fulfilled") {
-        return ifResolve
+let allSettledResponseHandler = function (dataItem, targetObj) {
+    if (dataItem[0].status === "fulfilled" && Array.isArray(dataItem[0].value)) {
+        targetObj.lastCommit = dataItem[0].value[0].commit.committer.date;
     } else {
-        return ifReject
+        targetObj.lastCommit = '-'
     };
+
+    if (dataItem[1].status === "fulfilled" && Array.isArray(dataItem[1].value)) {
+        targetObj.languages = Object.keys(dataItem[1].value);
+    } else {
+        targetObj.languages = '-';
+    };
+
+    if (dataItem[2].status === "fulfilled" && Array.isArray(dataItem[2].value)) {
+        targetObj.contributors = makeContributorsArr(dataItem[2].value);
+    } else {
+        targetObj.contributors = '-';
+    };
+
+    if (!Array.isArray(dataItem[0].value)) {
+        writeTitleModule(dataItem[0].value.message);
+    }
 };
 
 let getRepForPageModule = function () {
@@ -57,9 +73,7 @@ let getRepForPageModule = function () {
         .then(() => {
             Promise.allSettled(makeSecondRequestArr(obj, 500))
             .then(secondRequestData => {
-                obj.lastCommit = allSettledResponseHandler (secondRequestData[0], secondRequestData[0].value[0].commit.committer.date, '-');
-                obj.languages = allSettledResponseHandler (secondRequestData[1], Object.keys(secondRequestData[1].value), '-');
-                obj.contributors = allSettledResponseHandler (secondRequestData[2], makeContributorsArr(secondRequestData[2].value), '-');
+                allSettledResponseHandler(secondRequestData, obj);
             })
             .then(() => resolve(obj))
         })
