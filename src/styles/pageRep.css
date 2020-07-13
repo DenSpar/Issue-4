@@ -1,7 +1,10 @@
-/*
-.repContainer__repPageContainer {}
-.InfoBlock {}
-*/
+.repContainer__repPageContainer {
+    margin: 20px 0;
+}
+
+.InfoBlock {
+    margin: 10px 0;
+}
 
 .repContainer__repPageContainer_repFirstInfo {
     font-size: 18px;
@@ -14,6 +17,7 @@
     width: 18px;
     min-width: 18px;
     height: 18px;
+    margin-right: 3px;
 }
 
 .repNameForPage {
@@ -28,6 +32,7 @@
 
 .lastCommitForPage {
     font-size: 18px;
+    margin-right: auto;
 }
 
 .whiteSpace {

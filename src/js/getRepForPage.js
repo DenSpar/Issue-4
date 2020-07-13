@@ -31,23 +31,27 @@ let makeSecondRequestArr = function(targetObj, timeout) {
 };
 
 let allSettledResponseHandler = function (dataItem, targetObj) {
-    if (dataItem[0].status === "fulfilled") {
+    if (dataItem[0].status === "fulfilled" && Array.isArray(dataItem[0].value)) {
         targetObj.lastCommit = dataItem[0].value[0].commit.committer.date;
     } else {
         targetObj.lastCommit = '-'
     };
 
-    if (dataItem[1].status === "fulfilled") {
+    if (dataItem[1].status === "fulfilled" && Array.isArray(dataItem[1].value)) {
         targetObj.languages = Object.keys(dataItem[1].value);
     } else {
         targetObj.languages = '-';
     };
 
-    if (dataItem[2].status === "fulfilled") {
+    if (dataItem[2].status === "fulfilled" && Array.isArray(dataItem[2].value)) {
         targetObj.contributors = makeContributorsArr(dataItem[2].value);
     } else {
         targetObj.contributors = '-';
     };
+
+    if (!Array.isArray(dataItem[0].value)) {
+        writeTitleModule(dataItem[0].value.message);
+    }
 };
 
 let getRepForPageModule = function () {

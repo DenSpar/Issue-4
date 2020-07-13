@@ -25,7 +25,7 @@ let getItemsForListModule = function(url) {
             Promise.allSettled(obj.listCommits)
             .then(commitData => {
                 commitData.forEach(function(item, i, arr) {
-                    if (commitData[i].status === "fulfilled") {
+                    if (commitData[i].status === "fulfilled" && Array.isArray(commitData[i].value)) {
                         obj.listItems[i].lastCommit = commitData[i].value[0].commit.committer.date;
                     } else {
                         obj.listItems[i].lastCommit = '-';
@@ -33,7 +33,6 @@ let getItemsForListModule = function(url) {
                 });
                 delete obj.listCommits
             }).then(() => resolve(obj))
-            .catch(err => console.log(err));
         })        
     })
     .catch(err => console.log(err));

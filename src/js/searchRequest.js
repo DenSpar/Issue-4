@@ -4,9 +4,8 @@ import paintPaginatorModule from '@js/paginatorPainter';
 import writeTitleModule from '@js/contentTitle';
 
 let searchRequestModule = function(searchName, searchPage, isMostPop) { 
-    let requestURL = 'https://api.github.com/search/repositories?q=' + searchName + '&sort=stars&order=desc&page=' + searchPage + '&per_page=2';   
-    //заменить количество репов на 10 ^
-    makeRepsListModule(requestURL, 2000)
+    let requestURL = 'https://api.github.com/search/repositories?q=' + searchName + '&sort=stars&order=desc&page=' + searchPage + '&per_page=10';
+    makeRepsListModule(requestURL, 3000)
     .then(dataList => {
         if (dataList.totalCount === 0) {
             writeTitleModule('Репозитории по запросу "' + searchName + '" не найдены')
