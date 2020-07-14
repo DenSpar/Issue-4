@@ -10,8 +10,10 @@ let inputListenerModule = function() {
                 if (newURL.searchParams.has('repName')) {
                     newURL.searchParams.delete('repName');
                 };
+                let newPath = newURL.pathname.slice(0, newURL.pathname.length-12) + 'repList.html';
                 newURL.searchParams.set('search', searchInput.value);
-                newURL.searchParams.set('page', 1);                
+                newURL.searchParams.set('page', 1);
+                newURL.pathname = newPath;
                 window.location.href = newURL;
             };
         };

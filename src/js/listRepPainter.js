@@ -10,6 +10,8 @@ let repPageURL = function (itemName) {
     repURL.searchParams.delete('search');
     repURL.searchParams.delete('page');
     repURL.searchParams.set('repName', itemName);
+    let newPath = repURL.pathname.slice(0, repURL.pathname.length-12) + 'repPage.html';
+    repURL.pathname = newPath;
     return repURL
 };
 

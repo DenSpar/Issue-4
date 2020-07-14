@@ -6,7 +6,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        repList: path.resolve(__dirname, 'src/repList.js'),
+        main: path.resolve(__dirname, 'src/repList.js'),
         repPage: path.resolve(__dirname, 'src/repPage.js')
     },
     output: {
@@ -17,7 +17,7 @@ module.exports = {
         new HTMLwebpackPlugin({
             template: './src/assets/repList_template.html',
             filename: 'repList.html',
-            chunks: ['repList']
+            chunks: ['main']
         }),
         new HTMLwebpackPlugin({
             template: './src/assets/repPage_template.html',
