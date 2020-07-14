@@ -1,9 +1,9 @@
 import getRequestModule from '@js/getRequest';
 import writeTitleModule from '@js/contentTitle';
+import dateHandlerModule from '@js/dateHandler';
 
 let nowURL = new URL (window.location.href);
 let requestURL = 'https://api.github.com/repos/' + nowURL.searchParams.get('repName');
-//let urlForTest = 'https://api.github.com/repos/' + 'DenSpar/Lex-Shop';
 
 let makeContributorsArr = function (arr) {
     let newArr = [];
@@ -32,7 +32,8 @@ let makeSecondRequestArr = function(targetObj, timeout) {
 
 let allSettledResponseHandler = function (dataItem, targetObj) {
     if (dataItem[0].status === "fulfilled" && Array.isArray(dataItem[0].value)) {
-        targetObj.lastCommit = dataItem[0].value[0].commit.committer.date;
+        let newCommitDate = dataItem[0].value[0].commit.committer.date;
+        targetObj.lastCommit = dateHandlerModule(newCommitDate);
     } else {
         targetObj.lastCommit = '-'
     };
