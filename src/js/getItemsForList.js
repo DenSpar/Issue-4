@@ -1,5 +1,6 @@
 import getRequestModule from '@js/getRequest';
 import makePromiseArrModule from '@js/makePromiseArr';
+import dateHandlerModule from '@js/dateHandler';
 
 let getItemsForListModule = function(url) {
     return new Promise((resolve, reject) => {
@@ -26,7 +27,8 @@ let getItemsForListModule = function(url) {
             .then(commitData => {
                 commitData.forEach(function(item, i, arr) {
                     if (commitData[i].status === "fulfilled" && Array.isArray(commitData[i].value)) {
-                        obj.listItems[i].lastCommit = commitData[i].value[0].commit.committer.date;
+                        let newCommitDate = commitData[i].value[0].commit.committer.date;
+                        obj.listItems[i].lastCommit = dateHandlerModule(newCommitDate);
                     } else {
                         obj.listItems[i].lastCommit = '-';
                     };
