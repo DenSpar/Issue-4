@@ -1,3 +1,5 @@
+import changePathModule from '@js/changePath';
+
 let contentContainer = document.querySelector('#contentContainer');
 let itemTemplateContent = contentContainer.querySelector('#repItemTemplate').content;
 let itemTemplate = itemTemplateContent.querySelector('.contentContainer__listRep_itemContainer');
@@ -9,9 +11,8 @@ let repPageURL = function (itemName) {
     let repURL = new URL(window.location.href);
     repURL.searchParams.delete('search');
     repURL.searchParams.delete('page');
-    repURL.searchParams.set('repName', itemName);
-    let newPath = repURL.pathname.slice(0, repURL.pathname.length-12) + 'repPage.html';
-    repURL.pathname = newPath;
+    repURL.searchParams.set('repName', itemName);    
+    repURL.pathname = changePathModule(repURL.pathname, 'repPage.html');
     return repURL
 };
 

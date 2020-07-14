@@ -16,7 +16,7 @@ module.exports = {
     plugins: [
         new HTMLwebpackPlugin({
             template: './src/assets/repList_template.html',
-            filename: 'repList.html',
+            filename: 'index.html',
             chunks: ['main']
         }),
         new HTMLwebpackPlugin({
