@@ -20,3 +20,8 @@
     cursor: pointer;
     margin: auto 0;
 }
+
+.header_sticky {
+    position: sticky;
+    top: 0;
+}
