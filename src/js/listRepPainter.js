@@ -35,7 +35,7 @@ let listRepPainterModule = function(arr) {
     newTitle.classList.add('contentContainer__title', 'fontDefault');
     let nowURL = new URL (window.location.href);
     if (nowURL.searchParams.has('search')) {
-        newTitle.textContent = 'Репозитории найденные по запросу "' + nowURL.searchParams.get('search') + '"';
+        newTitle.textContent = 'Репозитории, найденные по запросу "' + nowURL.searchParams.get('search') + '"';
     } else {
         newTitle.textContent = '10 самых популярных репозиториев';
     }

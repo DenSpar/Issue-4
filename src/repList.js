@@ -1,7 +1,9 @@
 import './styles/styles.css';
 import searchRequestModule from '@js/searchRequest';
 import inputListenerModule from '@js/inputListener';
+import changeTitleModule from '@js/changeTitle';
 
+changeTitleModule()
 inputListenerModule();
 
 let nowURL = new URL (window.location.href);
