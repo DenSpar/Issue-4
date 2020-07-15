@@ -1,4 +1,4 @@
-import changePageModule from '@js/changePage';
+import changeActivePageModule from '@js/changeActivePage';
 
 let paginatorContainer = contentContainer.querySelector('.contentContainer__paginator');
 let paginatorPageTemplateContent = paginatorContainer.querySelector('template').content;
@@ -39,7 +39,7 @@ let paintPaginatorModule = function(num) {
     };
     //загрузить блок пагинатора на страницу
     paginatorContainer.append(paginatorList);
-    changePageModule();
+    changeActivePageModule();
 };
 
 export default paintPaginatorModule;

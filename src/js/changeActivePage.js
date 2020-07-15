@@ -1,6 +1,6 @@
 let paginatorContainer = contentContainer.querySelector('.contentContainer__paginator');
-export default function changePageModule () {
-    //обявляем переменную. Внутри переменной будет объект с активной страницей
+export default function changeActivePageModule () {
+    //объявляем переменную. Внутри переменной будет объект с активной страницей
     let nowActivePage = paginatorContainer.querySelector('.activePage');
     //объявляем переменную. Внутри переменной будут все страницы
     let allPages = paginatorContainer.querySelectorAll ('.paginatorPage');
@@ -12,7 +12,6 @@ export default function changePageModule () {
             // условие, срабатывает только если нажать на неактивную страницу
             if (nowActivePage.childNodes[1].innerHTML !== page.childNodes[1].innerHTML) {
                 nowActivePage.classList.remove('activePage');
-                console.log('active page was №', nowActivePage.childNodes[1].innerHTML, 'new active page №', page.childNodes[1].innerHTML);
                 page.classList.add('activePage');
                 nowActivePage = page;
                 let newURL = new URL (window.location.href);
