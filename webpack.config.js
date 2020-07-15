@@ -5,16 +5,25 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: {
+        main: path.resolve(__dirname, 'src/repList.js'),
+        repPage: path.resolve(__dirname, 'src/repPage.js')
+    },
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new HTMLwebpackPlugin({
-            template: './src/assets/template.html',
-            filename: 'index.html'
-        }),        
+            template: './src/assets/repList_template.html',
+            filename: 'index.html',
+            chunks: ['main']
+        }),
+        new HTMLwebpackPlugin({
+            template: './src/assets/repPage_template.html',
+            filename: 'repPage.html',
+            chunks: ['repPage']
+        }),       
         new CopyWebpackPlugin({
             patterns:[
                 {

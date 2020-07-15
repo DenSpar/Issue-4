@@ -1,3 +1,5 @@
+import changePathModule from '@js/changePath';
+
 let searchInput = document.querySelector('#searchInput');
 
 let inputListenerModule = function() {
@@ -10,8 +12,9 @@ let inputListenerModule = function() {
                 if (newURL.searchParams.has('repName')) {
                     newURL.searchParams.delete('repName');
                 };
+                newURL.pathname = changePathModule(newURL.pathname, 'index.html');
                 newURL.searchParams.set('search', searchInput.value);
-                newURL.searchParams.set('page', 1);                
+                newURL.searchParams.set('page', 1);
                 window.location.href = newURL;
             };
         };
