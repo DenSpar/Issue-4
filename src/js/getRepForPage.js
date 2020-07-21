@@ -38,7 +38,7 @@ let allSettledResponseHandler = function (dataItem, targetObj) {
         targetObj.lastCommit = '-'
     };
 
-    if (dataItem[1].status === "fulfilled" && Array.isArray(dataItem[1].value)) {
+    if (dataItem[1].status === "fulfilled") {
         targetObj.languages = Object.keys(dataItem[1].value);
     } else {
         targetObj.languages = '-';
